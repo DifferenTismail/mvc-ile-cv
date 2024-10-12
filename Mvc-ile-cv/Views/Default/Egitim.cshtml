@@ -1,0 +1,18 @@
+﻿@using Mvc_ile_cv.Models.Entity
+@model List<TBL_Egitimlerim>
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Eğitim Hayatım</h2>
+        @foreach (var x in Model) {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@x.Baslik</h3>
+                <div class="subheading mb-3">@x.AltBaslik_1</div>
+                <div>@x.AltBaslik_2</div>
+                <p>GNO: @x.GNO</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">@x.Tarih</span></div>
+        </div>
+        }
+    </div>
+</section>

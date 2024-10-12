@@ -1,0 +1,11 @@
+﻿@using Mvc_ile_cv.Models.Entity
+@model List<TBL_Hobilerim>
+<section class="resume-section" id="interests">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Hobilerim</h2>
+        @foreach(var x in Model) {
+        <p>@x.Aciklama_1</p>
+        <p class="mb-0">@x.Aciklama_2</p>
+        }
+    </div>
+</section>
