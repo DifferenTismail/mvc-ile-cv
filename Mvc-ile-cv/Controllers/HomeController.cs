@@ -26,5 +26,9 @@ namespace Mvc_ile_cv.Controllers
 
             return View();
         }
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
