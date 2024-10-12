@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
+          <Property Name="Sifre" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TBL_Deneyimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaslik" Type="varchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Tarih" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBL_Egitimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaslik_1" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaslik_2" Type="varchar" MaxLength="100" />
+          <Property Name="GNO" Type="varchar" MaxLength="10" />
+          <Property Name="Tarih" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBL_Hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Soyad" Type="varchar" MaxLength="30" />
+          <Property Name="Adres" Type="varchar" MaxLength="100" />
+          <Property Name="Telefon" Type="varchar" MaxLength="20" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBL_Hobilerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama_1" Type="varchar" MaxLength="500" />
+          <Property Name="Aciklama_2" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TBL_Iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="100" />
+          <Property Name="Mesaj" Type="varchar" MaxLength="1000" />
+          <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="TBL_Sertifikalarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBL_Yeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yetenek" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="DbCvModelStoreContainer">
+          <EntitySet Name="TBL_Admin" EntityType="Self.TBL_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Deneyimlerim" EntityType="Self.TBL_Deneyimlerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Egitimlerim" EntityType="Self.TBL_Egitimlerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Hakkimda" EntityType="Self.TBL_Hakkimda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Hobilerim" EntityType="Self.TBL_Hobilerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Iletisim" EntityType="Self.TBL_Iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Sertifikalarim" EntityType="Self.TBL_Sertifikalarim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_Yeteneklerim" EntityType="Self.TBL_Yeteneklerim" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Deneyimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Egitimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik_1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaslik_2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Hakkimda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Hobilerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TBL_Sertifikalarim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_Yeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yetenek" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_Admin" EntityType="Self.TBL_Admin" />
+          <EntitySet Name="TBL_Deneyimlerim" EntityType="Self.TBL_Deneyimlerim" />
+          <EntitySet Name="TBL_Egitimlerim" EntityType="Self.TBL_Egitimlerim" />
+          <EntitySet Name="TBL_Hakkimda" EntityType="Self.TBL_Hakkimda" />
+          <EntitySet Name="TBL_Hobilerim" EntityType="Self.TBL_Hobilerim" />
+          <EntitySet Name="TBL_Iletisim" EntityType="Self.TBL_Iletisim" />
+          <EntitySet Name="TBL_Sertifikalarim" EntityType="Self.TBL_Sertifikalarim" />
+          <EntitySet Name="TBL_Yeteneklerim" EntityType="Self.TBL_Yeteneklerim" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbCvModelStoreContainer" CdmEntityContainer="DbCvEntities">
+          <EntitySetMapping Name="TBL_Admin">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Admin">
+              <MappingFragment StoreEntitySet="TBL_Admin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Deneyimlerim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Deneyimlerim">
+              <MappingFragment StoreEntitySet="TBL_Deneyimlerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik" ColumnName="AltBaslik" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Egitimlerim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Egitimlerim">
+              <MappingFragment StoreEntitySet="TBL_Egitimlerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="AltBaslik_1" ColumnName="AltBaslik_1" />
+                <ScalarProperty Name="AltBaslik_2" ColumnName="AltBaslik_2" />
+                <ScalarProperty Name="GNO" ColumnName="GNO" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Hakkimda">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Hakkimda">
+              <MappingFragment StoreEntitySet="TBL_Hakkimda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Hobilerim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Hobilerim">
+              <MappingFragment StoreEntitySet="TBL_Hobilerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Aciklama_1" ColumnName="Aciklama_1" />
+                <ScalarProperty Name="Aciklama_2" ColumnName="Aciklama_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Iletisim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Iletisim">
+              <MappingFragment StoreEntitySet="TBL_Iletisim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Sertifikalarim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Sertifikalarim">
+              <MappingFragment StoreEntitySet="TBL_Sertifikalarim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_Yeteneklerim">
+            <EntityTypeMapping TypeName="DbCvModel.TBL_Yeteneklerim">
+              <MappingFragment StoreEntitySet="TBL_Yeteneklerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
