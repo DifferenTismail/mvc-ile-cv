@@ -16,5 +16,16 @@ namespace Mvc_ile_cv.Controllers
             var degerler = repo.List();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult DeneyimEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DeneyimEkle(TBL_Deneyimlerim p)
+        {
+            repo.TAdd(p);
+            return RedirectToAction("Index");
+        }
     }
 }
