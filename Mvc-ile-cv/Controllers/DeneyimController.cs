@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using Mvc_ile_cv.Models.Entity;
@@ -26,6 +27,18 @@ namespace Mvc_ile_cv.Controllers
         {
             repo.TAdd(p);
             return RedirectToAction("Index");
+        }
+        public ActionResult DeneyimSil(int id)
+        {
+            TBL_Deneyimlerim t = repo.Find(x => x.ID == id);
+            repo.TDelete(t);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult DeneyimGetir(int id)
+        {
+            TBL_Deneyimlerim t = repo.Find(x => x.ID == id);
+            return View(t);
         }
     }
 }
