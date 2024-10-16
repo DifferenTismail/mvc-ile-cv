@@ -1,0 +1,45 @@
+﻿@using Mvc_ile_cv.Models.Entity
+@model List<TBL_Egitimlerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Eğitim Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Okul Adı</th>
+        <th>Fakülte</th>
+        <th>Bölüm</th>
+        <th>GNO</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Baslik</td>
+            <td>@item.AltBaslik_1</td>
+            <td>@item.AltBaslik_2</td>
+            <td>@item.GNO</td>
+            <td>@item.Tarih</td>
+            <td>
+                <a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
+            <td>
+                <a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-primary btn-sm">
+                    <i class="fas fa-pencil-alt"></i>
+                    Güncelle
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
