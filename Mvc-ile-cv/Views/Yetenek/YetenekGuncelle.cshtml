@@ -1,0 +1,18 @@
+﻿@model Mvc_ile_cv.Models.Entity.TBL_Yeteneklerim
+@{
+    ViewBag.Title = "YetenekGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4 class="mb-4">Yetenek Güncelleme Sayfası</h4>
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran")
+    @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

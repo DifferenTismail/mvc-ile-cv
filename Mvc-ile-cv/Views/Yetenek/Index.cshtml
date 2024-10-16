@@ -1,8 +1,14 @@
 ﻿@using Mvc_ile_cv.Models.Entity
-@model List<TBL_Yeteneklerim> 
+@model List<TBL_Yeteneklerim>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    string renk = "";
+}
+@{
+    string labelRenk = "";
 }
 <div class="wrapper">
     <section class="content mt-4">
@@ -15,27 +21,65 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <a href="/Yetenek/YeniYetenek/" class="btn btn-info mb-2">Yeni Yetenek Ekle</a>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Task</th>
-                                        <th>Progress</th>
-                                        <th style="width: 40px">Label</th>
+                                        <th>Yetenek</th>
+                                        <th>Derece</th>
+                                        <th style="width: 40px">Oran</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach(var item in Model) {
-                                    <tr>
-                                        <td>@item.ID</td>
-                                        <td>@item.Yetenek</td>
-                                        <td>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                            </div>
-                                        </td>
-                                        <td><span class="badge bg-danger">55%</span></td>
-                                    </tr>
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.Oran >= 0 && item.Oran <= 50)
+                                        {
+                                            renk = "progress-bar bg-danger";
+                                            labelRenk = "badge bg-danger";
+
+                                        }
+                                        else if (item.Oran >= 51 && item.Oran <= 70)
+                                        {
+                                            renk = "progress-bar bg-warning";
+                                            labelRenk = "badge bg-warning";
+                                        }
+                                        else if (item.Oran >= 71 && item.Oran <= 84)
+                                        {
+                                            renk = "progress-bar bg-primary";
+                                            labelRenk = "badge bg-primary";
+                                        }
+                                        else if (item.Oran >= 85 && item.Oran <= 100)
+                                        {
+                                            renk = "progress-bar bg-success";
+                                            labelRenk = "badge bg-success";
+                                        }
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Yetenek</td>
+
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="@renk" style="width: @item.Oran%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="@labelRenk">@item.Oran%</span></td>
+                                            <td>
+                                                <a href="/Yetenek/YetenekSil/@item.ID" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash"></i>
+                                                    Sil
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/Yetenek/YetenekGuncelle/@item.ID" class="btn btn-info btn-sm">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    Güncelle
+                                                </a>
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
