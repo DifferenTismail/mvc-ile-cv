@@ -1,0 +1,31 @@
+﻿@model Mvc_ile_cv.Models.Entity.TBL_Egitimlerim
+@{
+    ViewBag.Title = "EgitimGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4 class="mb-4">Eğitim Güncelleme Sayfası</h4>
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Okul Adı")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Fakülte")
+    @Html.TextBoxFor(x => x.AltBaslik_1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Bölüm")
+    @Html.TextBoxFor(x => x.AltBaslik_2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @style = "color:blue" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+
+

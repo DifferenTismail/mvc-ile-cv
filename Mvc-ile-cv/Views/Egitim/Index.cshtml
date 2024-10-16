@@ -7,7 +7,7 @@
 
 <h2>Eğitim Listesi</h2>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-hover">
     <tr>
         <th>ID</th>
         <th>Okul Adı</th>
@@ -28,13 +28,13 @@
             <td>@item.GNO</td>
             <td>@item.Tarih</td>
             <td>
-                <a href="/Deneyim/DeneyimSil/@item.ID" class="btn btn-danger btn-sm">
+                <a href="/Egitim/EgitimSil/@item.ID" class="btn btn-danger btn-sm">
                     <i class="fas fa-trash"></i>
                     Sil
                 </a>
             </td>
             <td>
-                <a href="/Deneyim/DeneyimGetir/@item.ID" class="btn btn-primary btn-sm">
+                <a href="/Egitim/EgitimGuncelle/@item.ID" class="btn btn-primary btn-sm">
                     <i class="fas fa-pencil-alt"></i>
                     Güncelle
                 </a>
@@ -42,4 +42,4 @@
         </tr>
     }
 </table>
-<a href="/Deneyim/DeneyimEkle/" class="btn btn-primary">Yeni Deneyim Ekle</a>
+<a href="/Egitim/EgitimEkle/" class="btn btn-primary">Yeni Eğitim Ekle</a>
