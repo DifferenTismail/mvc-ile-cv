@@ -1,0 +1,93 @@
+﻿@using Mvc_ile_cv.Models.Entity
+@model List<Tbl_SosyalMedya>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="wrapper">
+    <section class="content mt-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Sosyal Medya Listem</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <button  class="btn btn-info mb-2" data-toggle="modal" data-target="#Modal1">Yeni Sosyal Medya Ekle</button>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Ad</th>
+                                        <th>Link</th>
+                                        <th>Icon</th>
+                                        <th>Durum</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {                                  
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Ad</td>
+                                            <td>@item.Link</td>
+                                            <td>@item.Ikon</td>
+                                            <td>
+                                                @if (item.Durum == true)
+                                                {
+                                                    <span>Aktif</span>
+                                                }
+                                                else if (item.Durum == false)
+                                                {
+                                                    <span>Pasif</span>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a href="/SosyalMedya/Sil/@item.ID" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash"></i>
+                                                    Sil
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="/SosyalMedya/SayfaGetir/@item.ID" class="btn btn-info btn-sm">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                    Güncelle
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Sosyal Medya Ekleme Penceresi </h2>
+                </div>
+                <form method="post" action="/SosyalMedya/Ekle">
+                    <div class="modal-body">
+                        <label>Sosya Medya Adı</label>
+                        <input type="text" name="Ad" class="form-control mb-2" />
+
+                        <label>Sosya Medya Linki</label>
+                        <input type="text" name="Link" class="form-control mb-2" />
+
+                        <label>Sosya Medya Ikonu</label>
+                        <input type="text" name="Ikon" class="form-control mb-2" />
+                        <button type="submit" class="btn btn-info">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

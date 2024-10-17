@@ -1,0 +1,8 @@
+﻿@using Mvc_ile_cv.Models.Entity
+@model List<Tbl_SosyalMedya>
+<div class="social-icons">
+    @foreach (var x in Model)
+    {
+        <a class="social-icon" href="@x.Link"><i class="@x.Ikon"></i></a>
+    }
+</div>

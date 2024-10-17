@@ -1,0 +1,20 @@
+﻿@model Mvc_ile_cv.Models.Entity.TBL_Admin
+@{
+    ViewBag.Title = "AdminDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4 class="mb-4">Deneyim Güncelleme Sayfası</h4>
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

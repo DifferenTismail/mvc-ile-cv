@@ -1,0 +1,17 @@
+﻿@model Mvc_ile_cv.Models.Entity.TBL_Sertifikalarim 
+@{
+    ViewBag.Title = "YeniSertifika";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h4 class="mb-4 mt-3">Sertifika Ekleme Sayfası</h4>
+<form method="post" class="form-group">
+    @Html.Label("Sertifika Adı")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>

@@ -8,45 +8,53 @@
 
 <div class="wrapper mt-3 content">
     <!-- Main content -->
-        <div class="container-fluid">
-            <div class="row">
-                <!-- /.col -->
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- /.tab-pane -->
-                            <div class="tab-pane" id="timeline">
-                                <!-- The timeline -->
-                               
-                                <div class="timeline timeline-inverse">
-                                    @foreach (var item in Model)
-                                    {
-                                        <!-- timeline time label -->
-                                        <div class="time-label">
-                                            <span class="bg-success">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- /.col -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="timeline">
+                            <!-- The timeline -->
+
+                            <div class="timeline timeline-inverse">
+                                @foreach (var item in Model)
+                                {
+                                    var lastChar = item.Tarih.Last();
+                                    var isNumeric = char.IsDigit(lastChar);
+                                    var isOdd = isNumeric && (int.Parse(lastChar.ToString()) % 2 != 0);
+                                    var bgColorClass = isOdd ? "bg-orange" : "bg-green";
+
+                                    <!-- timeline time label -->
+                                    <div class="time-label">
+                                        <a href="/Sertifika/SertifikaGuncelle/@item.ID" class="btn btn-success @bgColorClass">
+                                            <span >
                                                 @item.Tarih
                                             </span>
-                                        </div>
-                                        <!-- /.timeline-label -->
-                                        <!-- timeline item -->
-                                        <div>
-                                            <div class="timeline-item">
-                                                <div class="timeline-body">
-                                                    @item.Aciklama
-                                                </div>
+                                        </a>
+                                    </div>
+                                    <!-- /.timeline-label -->
+                                    <!-- timeline item -->
+                                    <div>
+                                        <div class="timeline-item">
+                                            <div class="timeline-body">
+                                                @item.Aciklama
                                             </div>
                                         </div>
-                                    }
                                     </div>
+                                }
                             </div>
+                            <a href="/Sertifika/YeniSertifika/" class="btn btn-info">Yeni Sertifika Girişi</a>
                         </div>
-                        <!-- /.tab-content -->
-                    </div><!-- /.card-body -->
-                </div>
-                <!-- /.nav-tabs-custom -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div><!-- /.card-body -->
             </div>
-            <!-- /.col -->
+            <!-- /.nav-tabs-custom -->
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
 </div><!-- /.container-fluid -->
 <!-- /.content -->

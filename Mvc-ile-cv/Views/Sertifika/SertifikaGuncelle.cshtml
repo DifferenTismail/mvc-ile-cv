@@ -1,0 +1,26 @@
+﻿@model Mvc_ile_cv.Models.Entity.TBL_Sertifikalarim
+@{
+    ViewBag.Title = "SertifikaGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4 class="mb-4 mt-3">Sertifika Güncelleme Sayfası</h4>
+<form method="post" class="form-group">
+    @Html.HiddenFor(x => x.ID)
+    @Html.Label("Sertifika Adı")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info btn-sm">
+        <i class="fas fa-pencil-alt"></i>
+        Güncelle
+    </button>
+    <a href="/Sertifika/SertifikaSil/@ViewBag.d" class="btn btn-danger ml-2 btn-sm">
+        <i class="fas fa-trash"></i>
+        Sil
+    </a>
+</form>
+
+
