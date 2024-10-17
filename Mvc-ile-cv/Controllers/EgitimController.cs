@@ -8,6 +8,7 @@ using Mvc_ile_cv.Models.Entity;
 using Mvc_ile_cv.Repositories;
 namespace Mvc_ile_cv.Controllers
 {
+    [Authorize]
     public class EgitimController : Controller
     {
         GenericRepository<TBL_Egitimlerim> repo = new GenericRepository<TBL_Egitimlerim>();

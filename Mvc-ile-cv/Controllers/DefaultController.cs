@@ -10,6 +10,7 @@ using Mvc_ile_cv.Models.Entity;
 using static System.Collections.Specialized.BitVector32;
 namespace Mvc_ile_cv.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         DbCvEntities db = new DbCvEntities();
@@ -17,6 +18,11 @@ namespace Mvc_ile_cv.Controllers
         {
             var degerler = db.TBL_Hakkimda.ToList();
             return View(degerler);
+        }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalMedya = db.Tbl_SosyalMedya.Where(x =>x.Durum == true).ToList();
+            return PartialView(sosyalMedya);
         }
         public PartialViewResult Deneyim()
         {
