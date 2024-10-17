@@ -33,5 +33,6 @@ namespace Mvc_ile_cv.Models.Entity
         public virtual DbSet<TBL_Iletisim> TBL_Iletisim { get; set; }
         public virtual DbSet<TBL_Sertifikalarim> TBL_Sertifikalarim { get; set; }
         public virtual DbSet<TBL_Yeteneklerim> TBL_Yeteneklerim { get; set; }
+        public virtual DbSet<Tbl_SosyalMedya> Tbl_SosyalMedya { get; set; }
     }
 }

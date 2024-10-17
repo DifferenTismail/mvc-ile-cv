@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a7b830210fd849c98d30ff5b814854cd" Name="Diagram1">
+      <Diagram DiagramId="a7b830210fd849c98d30ff5b814854cd" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="DbCvModel.TBL_Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBL_Deneyimlerim" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBL_Egitimlerim" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="DbCvModel.TBL_Iletisim" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBL_Sertifikalarim" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TBL_Yeteneklerim" Width="1.5" PointX="6.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbCvModel.Tbl_SosyalMedya" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
