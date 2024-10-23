@@ -6,7 +6,7 @@ Bu proje, **ASP.NET MVC 5** kullanılarak sıfırdan geliştirilen bir dinamik C
 
 - **ASP.NET MVC 5:** Dinamik CV yönetimi sağlayan güçlü bir framework. 🏗️
 - **Entity Framework:** Veritabanı işlemleri için kullanıldı. 💾
-- **SQL Server:** Veritabanı yönetimi. 🗄️ 
+- **SQL Server:** Veritabanı yönetimi. 🗄️
 - **Bootstrap:** Responsive tasarım ile kullanıcı dostu arayüz. 📱
 - **Authentication:** Kullanıcı girişi ve yönetici oturumu mevcut. 🔑
 - **Admin Paneli:** CV içeriklerini ekleme, silme, güncelleme ve listeleme özellikleri. 🛠️
